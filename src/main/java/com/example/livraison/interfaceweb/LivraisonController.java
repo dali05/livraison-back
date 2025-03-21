@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/livraisons")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("https://a1df7b5c0ee534e2294f4291f4537f8e-304100752.eu-north-1.elb.amazonaws.com")
 public class LivraisonController {
 
     private final LivraisonServicePort service;

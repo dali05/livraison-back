@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/creneaux")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("https://a1df7b5c0ee534e2294f4291f4537f8e-304100752.eu-north-1.elb.amazonaws.com")
 public class CreneauHoraireController {
 
     private final JourLivraisonRepository jourRepo;
