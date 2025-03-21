@@ -31,7 +31,7 @@ public class SecurityConfig {
                 .sessionManagement(sm->sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .csrf(csrf->csrf.disable())
                 .headers(h->h.frameOptions(fo->fo.disable()))
-                .authorizeHttpRequests(ar->ar.requestMatchers("/h2-console/**").permitAll())
+                .authorizeHttpRequests(ar->ar.requestMatchers("/v3/api-docs/**","/swagger-ui/**", "/swagger-ui.html/**", "ndex.html").permitAll())
                 .authorizeHttpRequests(ar->ar.requestMatchers("/admin/**").hasAuthority("ADMIN"))
                 .authorizeHttpRequests(ar->ar.anyRequest().authenticated())
                 .oauth2ResourceServer(o2->o2.jwt(jt -> jt.jwtAuthenticationConverter(jwtAuthConverter)))
