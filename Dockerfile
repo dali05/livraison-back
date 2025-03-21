@@ -17,8 +17,8 @@ RUN keytool -genkeypair -alias livraison-back -keyalg RSA -keysize 2048 -storety
 # Étape 5 : Copier l'application dans l'image
 COPY target/${APP_JAR} /app/${APP_JAR}
 
-# Étape 6 : Exposer le port HTTPS
-EXPOSE 8443
+# Étape 6 : Exposer le port HTTPS (8080)
+EXPOSE 8080
 
 # Étape 7 : Lancer l'application avec SSL activé
-CMD ["java", "-jar", "/app/livraison-back.jar", "--server.port=8443", "--server.ssl.key-store=/app/keystore.p12", "--server.ssl.key-store-password=mysecretpassword", "--server.ssl.key-store-type=PKCS12"]
+CMD ["java", "-jar", "/app/livraison-back.jar", "--server.port=8080", "--server.ssl.key-store=/app/keystore.p12", "--server.ssl.key-store-password=mysecretpassword", "--server.ssl.key-store-type=PKCS12"]
