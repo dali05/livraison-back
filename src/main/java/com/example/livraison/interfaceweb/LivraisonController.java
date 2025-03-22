@@ -21,6 +21,7 @@ public class LivraisonController {
 
     @PostMapping
     public Livraison createLivraison(@RequestBody List<String> produits) {
+        System.out.println("dali");
         return service.createLivraison(produits);
     }
 
