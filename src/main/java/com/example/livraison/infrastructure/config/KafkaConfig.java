@@ -20,8 +20,8 @@ import java.util.Map;
 @Configuration
 public class KafkaConfig {
 
-    @Value("${spring.kafka.bootstrap-servers")
-    private static String KAFKA_SERVER;
+    @Value("${spring.kafka.bootstrap-servers}")
+    private String KAFKA_SERVER;
 
     @Bean
     public ProducerFactory<String, Livraison> livraisonProducerFactory() {
