@@ -35,7 +35,7 @@ public class LivraisonServiceImpl implements LivraisonServicePort {
         Livraison livraison = new Livraison();
         livraison.setProduits(produitEntities);
         Livraison saved = livraisonRepository.save(livraison);
-        //kafkaProducerPort.sendLivraisonEvent(saved);
+        kafkaProducerPort.sendLivraisonEvent(saved);
         return saved;
     }
 
